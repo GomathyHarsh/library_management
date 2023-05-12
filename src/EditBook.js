@@ -36,7 +36,7 @@ function EditBook() {
     e.preventDefault();
     try {
       await axios.put(`https://63ec8d3d32a08117239d13f9.mockapi.io/api/library/${id}`, user);
-      navigate('/');
+      navigate('/books');
       alert("Successfully Edited")
     } catch (error) {
       console.log(error);
@@ -114,7 +114,7 @@ function EditBook() {
               onChange={e => onInputChange(e)}
             />
           </div>
-          <button className="btn btn-warning btn-block">Update User</button>
+          <button className="btn btn-warning btn-block">Update Book</button>
         </form>
       </div>
     </div>

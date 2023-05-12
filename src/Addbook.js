@@ -1,8 +1,10 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 function Addbook() {
+    const navigate = useNavigate();
     const formik= useFormik({
         initialValues :{
             BookName:"",
@@ -57,6 +59,7 @@ function Addbook() {
             try{
                 const userdata = await axios.post("https://63ec8d3d32a08117239d13f9.mockapi.io/api/library",values);
                 alert("success");
+                navigate('/books');
             }
             catch(error){
              alert("Error");
